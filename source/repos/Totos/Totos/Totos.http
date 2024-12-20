@@ -1,0 +1,6 @@
+@Totos_HostAddress = http://localhost:5016
+
+GET {{Totos_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
