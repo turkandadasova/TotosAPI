@@ -5,22 +5,26 @@ namespace Totos.DAL
 {
     public class TotosDbContext : DbContext
     {
+        public DbSet<Language> Languages { get; set; }
         public TotosDbContext(DbContextOptions options) : base(options)
         {
         }
 
-        public DbSet<Language> Languages { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Language>(b =>
             {
-
                 b.HasKey(x => x.Code);
                 b.Property(x => x.Code).IsFixedLength(true).HasMaxLength(2);
                 b.HasIndex(x => x.Name).IsUnique();
                 b.Property(x => x.Name).IsRequired().HasMaxLength(32);
-                b.Property(x => x.Icon).IsRequired().HasMaxLength(128);
-
+                b.Property(x => x.Icon).IsRequired().HasMaxLength(300);
+                b.HasData(new Language
+                {
+                    Code = "az",
+                    Name = "Azərbaycan",
+                    Icon= "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Ffree-photos-vectors%2Fazerbaijan-flag&psig=AOvVaw3lzlH7C9ThfAHeFF2esETl&ust=1734788454376000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCJjVkOG8tooDFQAAAAAdAAAAABAE"
+                });
             });
             base.OnModelCreating(modelBuilder);
         }

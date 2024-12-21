@@ -1,6 +1,8 @@
 
 using Microsoft.EntityFrameworkCore;
 using Totos.DAL;
+using Totos.Services.Abstracts;
+using Totos.Services.Implements;
 
 namespace Totos
 {
@@ -13,10 +15,11 @@ namespace Totos
             // Add services to the container.
 
             builder.Services.AddControllers();
-            builder.Services.AddDbContext<TotosDbContext>(s=>s.UseSqlServer(builder.Configuration.GetConnectionString("MSSql")));
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddDbContext<TotosDbContext>(s=>s.UseSqlServer(builder.Configuration.GetConnectionString("MSSql")));
+            builder.Services.AddScoped<ILanguageService, LanguageService>();
 
             var app = builder.Build();
 
