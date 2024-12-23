@@ -26,6 +26,19 @@ namespace Totos.DAL
                     Icon= "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Ffree-photos-vectors%2Fazerbaijan-flag&psig=AOvVaw3lzlH7C9ThfAHeFF2esETl&ust=1734788454376000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCJjVkOG8tooDFQAAAAAdAAAAABAE"
                 });
             });
+            modelBuilder.Entity<Word>(w =>
+            {
+                w.Property(x => x.Text)
+                .IsRequired()
+                .HasMaxLength(32);
+                w.HasOne(x=>x.Language).WithMany(x=>x.Words).HasForeignKey(x=>x.LangCode);
+                w.HasMany(x=>x.BannedWords).WithOne(x=>x.Word).HasForeignKey(x=>x.WordId);
+            });
+            modelBuilder.Entity<Game>(w =>
+            {
+                w.HasOne(x => x.Language).WithMany(x => x.Games).HasForeignKey(x => x.LangCode);
+                
+            });
             base.OnModelCreating(modelBuilder);
         }
     }

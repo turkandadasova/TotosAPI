@@ -142,3 +142,7 @@ C:\Users\Furqan Service\source\repos\Totos\Totos\bin\Debug\net8.0\runtimes\win\l
 C:\Users\Furqan Service\source\repos\Totos\Totos\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Furqan Service\source\repos\Totos\Totos\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\Furqan Service\source\repos\Totos\Totos\obj\Debug\net8.0\Totos.sourcelink.json
+C:\Users\Furqan Service\source\repos\Totos\Totos\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\Furqan Service\source\repos\Totos\Totos\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+C:\Users\Furqan Service\source\repos\Totos\Totos\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\Furqan Service\source\repos\Totos\Totos\bin\Debug\net8.0\AutoMapper.dll
