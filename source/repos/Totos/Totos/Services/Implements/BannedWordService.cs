@@ -9,7 +9,7 @@ using Totos.Services.Abstracts;
 
 namespace Totos.Services.Implements
 {
-    public class BannedWordServiceWordService(TotosDbContext _context, IMapper _mapper) : IBannedWordService
+    public class BannedWordService(TotosDbContext _context, IMapper _mapper) : IBannedWordService
     {
         public async Task CreateAsync(BannedWordCreateDto dto)
         {

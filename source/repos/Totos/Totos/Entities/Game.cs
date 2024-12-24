@@ -10,7 +10,7 @@
         public int? Score { get; set; }
         public int? SuccessAnswer {  get; set; }
         public int? WrongAnswer { get; set; }
-        public int LangCode { get; set; }
+        /*public int LanguageId { get; set; }*/
         public Language Language { get; set; }
     }
 }

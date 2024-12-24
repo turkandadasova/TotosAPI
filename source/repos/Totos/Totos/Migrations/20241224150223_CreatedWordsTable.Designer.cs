@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Totos.DAL;
 
@@ -11,9 +12,11 @@ using Totos.DAL;
 namespace Totos.Migrations
 {
     [DbContext(typeof(TotosDbContext))]
-    partial class TotosDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241224150223_CreatedWordsTable")]
+    partial class CreatedWordsTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -59,6 +62,9 @@ namespace Totos.Migrations
                     b.Property<string>("LanguageCode")
                         .IsRequired()
                         .HasColumnType("nchar(2)");
+
+                    b.Property<int>("LanguageId")
+                        .HasColumnType("int");
 
                     b.Property<int?>("Score")
                         .HasColumnType("int");

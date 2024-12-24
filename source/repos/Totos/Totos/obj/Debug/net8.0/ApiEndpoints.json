@@ -1,5 +1,63 @@
 [
   {
+    "ContainingType": "Totos.Controllers.BannedWordsController",
+    "Method": "Get",
+    "RelativePath": "api/BannedWords",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Totos.Controllers.BannedWordsController",
+    "Method": "Create",
+    "RelativePath": "api/BannedWords",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Totos.DTOs.BannedWords.BannedWordCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Totos.Controllers.BannedWordsController",
+    "Method": "Update",
+    "RelativePath": "api/BannedWords",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Totos.DTOs.BannedWords.BannedWordUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Totos.Controllers.BannedWordsController",
+    "Method": "Delete",
+    "RelativePath": "api/BannedWords",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Totos.DTOs.BannedWords.BannedWordDeleteDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Totos.Controllers.LanguagesController",
     "Method": "Get",
     "RelativePath": "api/Languages",
@@ -52,6 +110,64 @@
       {
         "Name": "dto",
         "Type": "Totos.DTOs.Languages.LanguageDeleteDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Totos.Controllers.WordsController",
+    "Method": "Get",
+    "RelativePath": "api/Words",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Totos.Controllers.WordsController",
+    "Method": "Create",
+    "RelativePath": "api/Words",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Totos.DTOs.Words.WordCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Totos.Controllers.WordsController",
+    "Method": "Update",
+    "RelativePath": "api/Words",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Totos.DTOs.Words.WordUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Totos.Controllers.WordsController",
+    "Method": "Delete",
+    "RelativePath": "api/Words",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Totos.DTOs.Words.WordDeleteDto",
         "IsRequired": true
       }
     ],

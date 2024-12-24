@@ -1,8 +1,8 @@
-﻿   using AutoMapper;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Totos.DTOs.Languages;
-using Totos.Entities;
+using Totos.DTOs.Words;
 using Totos.Exceptions;
 using Totos.Services.Abstracts;
 
@@ -10,7 +10,7 @@ namespace Totos.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class LanguagesController(ILanguageService _service,IMapper _mapper) : ControllerBase
+    public class WordsController(IWordService _service, IMapper _mapper) : ControllerBase
     {
         [HttpGet]
         public async Task<IActionResult> Get()
@@ -19,31 +19,25 @@ namespace Totos.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(LanguageCreateDto dto)
+        public async Task<IActionResult> Create(WordCreateDto dto)
         {
-
             try
             {
-             await _service.CreateAsync(dto);
-             return Ok();
+                await _service.CreateAsync(dto);
+                return Ok();
             }
             catch (Exception ex)
             {
-                if(ex is IBaseException bEx) 
+                if (ex is IBaseException bEx)
                 {
                     return StatusCode(bEx.StatusCode, new
-                    {
-                        StatusCode = bEx.StatusCode,
-                        Message=bEx.ErrorMessage
+                    {                        
+                        Message = bEx.ErrorMessage
                     });
                 }
                 else
                 {
-                    return BadRequest(new
-                    {
-                        Message=ex.Message
-
-                    });
+                    return BadRequest(ex.Message);
 
                 }
             }
@@ -51,25 +45,24 @@ namespace Totos.Controllers
         }
 
         //[HttpPost]
-        //public async Task<IActionResult> Create(LanguageCreateDto dto)
+        //public async Task<IActionResult> Create(WordCreateDto dto)
         //{
-        //   var data = _mapper.Map<Language>(dto);
+        //   var data = _mapper.Map<Word>(dto);
         //    return Ok(data);
         //}
 
         [HttpPut]
-        public async Task<IActionResult> Update(LanguageUpdateDto dto)
+        public async Task<IActionResult> Update(WordUpdateDto dto)
         {
             await _service.UpdateAsync(dto);
             return Ok();
         }
 
         [HttpDelete]
-        public async Task<IActionResult> Delete(LanguageDeleteDto dto)
+        public async Task<IActionResult> Delete(WordDeleteDto dto)
         {
             await _service.DeleteAsync(dto);
             return Ok();
         }
-
     }
 }

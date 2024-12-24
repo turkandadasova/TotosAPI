@@ -13,11 +13,16 @@ namespace Totos.Services.Implements
     {
         public async Task CreateAsync(WordCreateDto dto)
         {
-            if( await _context.Words.AnyAsync(x=>x.Id==dto.Id))
+            if (await _context.Words.AnyAsync(x => x.Text == dto.Text))
+            {
                 throw new WordExistException();
-            await _context.Words.AddAsync(_mapper.Map<Word>(dto));
+            }
+            await _context.AddAsync(new Entities.Word
+            {
+                Text = dto.Text,
+                LangCode = dto.LangCode,
+            });
             await _context.SaveChangesAsync();
-
         }
 
         public async Task DeleteAsync(WordDeleteDto dto)
@@ -33,7 +38,7 @@ namespace Totos.Services.Implements
 
         public async Task<IEnumerable<WordGetDto>> GetAllAsync()
         {
-            var datas = _context.Words.ToListAsync();
+            var datas =  await _context.Words.ToListAsync();
             return _mapper.Map<IEnumerable<WordGetDto>>(datas);
 
         }
