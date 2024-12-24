@@ -6,6 +6,10 @@ namespace Totos.DAL
     public class TotosDbContext : DbContext
     {
         public DbSet<Language> Languages { get; set; }
+        public DbSet<Word> Words { get; set; }
+        public DbSet<BannedWord> BannedWords { get; set; }
+
+
         public TotosDbContext(DbContextOptions options) : base(options)
         {
         }
